@@ -7,7 +7,7 @@ const education = [
     school: "Manipal Institute of Technology, Manipal",
     degree: "BTech, Information Technology",
     period: "2022 - 2026",
-    score: "Current CGPA: 7.86"
+    score: "Current CGPA: 8.02"
   },
   {
     school: "Namo Rims International School & Junior College, Pune",
