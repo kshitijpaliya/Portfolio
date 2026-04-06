@@ -59,7 +59,7 @@ export default function Navbar() {
 
             <li className="ml-3">
               <a
-                href="https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing"
+                href="/Kshitij_Paliya_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium transition-all"
@@ -120,6 +120,15 @@ export default function Navbar() {
                     href="https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(
+                        "https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing",
+                        "_blank",s
+                        "noopener,noreferrer",
+                      );
+                      setMobileOpen(false);
+                    }}
                     className="btn-primary inline-flex items-center gap-2 text-center justify-center w-full"
                   >
                     <span>Resume</span>

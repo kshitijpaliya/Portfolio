@@ -75,7 +75,7 @@ export default function Achievements({
             <span className="w-8 h-1 rounded-full bg-gradient-to-r from-accent to-violet-500" />
             Leadership
           </h3>
-          {/* <div className="space-y-6">
+          <div className="space-y-6">
             {leadership.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -120,7 +120,7 @@ export default function Achievements({
                 </div>
               </motion.div>
             ))}
-          </div> */}
+          </div>
         </div>
 
         {/* Achievements */}
@@ -129,7 +129,7 @@ export default function Achievements({
             <span className="w-8 h-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-500" />
             Achievements
           </h3>
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
             {achievements.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -149,7 +149,7 @@ export default function Achievements({
                 <p className="text-xs text-muted">{item.subtitle}</p>
               </motion.div>
             ))}
-          </div> */}
+          </div>
         </div>
       </div>
     </SectionWrapper>

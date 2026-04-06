@@ -55,8 +55,6 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const resumeUrl =
-    "https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing";
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -191,14 +189,10 @@ export default function Hero() {
             </span>
           </a>
           <a
-            href={resumeUrl}
+            href="/Kshitij_Paliya_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary flex items-center gap-2"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open(resumeUrl, "_blank", "noopener,noreferrer");
-            }}
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path

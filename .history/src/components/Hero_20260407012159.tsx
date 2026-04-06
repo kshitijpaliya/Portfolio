@@ -6,9 +6,9 @@ import HeroFluxBackground from "@/components/HeroFluxBackground";
 
 const roles = [
   "Full Stack Developer",
-  "Cloud Engineer",
-  "Real-Time Systems Builder",
-  "AI Product Builder",
+  "Cloud Enthusiast",
+  "Aspiring Product Builder",
+  "Looking for Full-Time SDE Roles",
 ];
 
 const socialLinks = [
@@ -23,7 +23,7 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/kshitijpaliya",
+    href: "https://linkedin.com/in/kshitij-paliya",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -32,7 +32,7 @@ const socialLinks = [
   },
   {
     label: "Email",
-    href: "mailto:kshitijpaliya@gmail.com",
+    href: "mailto:kshitij.paliya1@gmail.com",
     icon: (
       <svg
         width="20"
@@ -55,8 +55,6 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const resumeUrl =
-    "https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing";
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -124,13 +122,13 @@ export default function Hero() {
         className="relative z-10 mx-auto w-full max-w-[72rem] px-6 text-center sm:px-8 lg:px-12"
       >
         {/* Status badge */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/5 px-4 py-1.5 text-xs font-medium text-green-400">
-            <span className="relative flex h-2 w-2">
+        <motion.div variants={itemVariants} className="mb-12">
+          <span className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/5 px-4 py-1.5 text-s font-medium text-green-400">
+            <span className="relative flex h-3 w-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
             </span>
-            Available for opportunities
+            Available for Full-Time Opportunities & Exciting Projects
           </span>
         </motion.div>
 
@@ -139,14 +137,10 @@ export default function Hero() {
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
         >
-          <span className="text-foreground">Building </span>
-          <span className="gradient-text">Scalable Systems</span>
-          <span className="text-foreground">,</span>
+          <span className="text-foreground">Hi, I'm </span>
+          <span className="gradient-text">Kshitij Paliya !!</span>
+          {/* <span className="text-foreground">,</span> */}
           <br />
-          <span className="text-foreground">Real-Time Platforms </span>
-          <br className="hidden sm:block" />
-          <span className="text-foreground">& </span>
-          <span className="gradient-text">AI-Driven Products</span>
         </motion.h1>
 
         {/* Typing animation */}
@@ -191,14 +185,10 @@ export default function Hero() {
             </span>
           </a>
           <a
-            href={resumeUrl}
+            href="https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary flex items-center gap-2"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open(resumeUrl, "_blank", "noopener,noreferrer");
-            }}
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
@@ -209,7 +199,7 @@ export default function Hero() {
                 strokeLinejoin="round"
               />
             </svg>
-            Download Resume
+            View Resume
           </a>
           <a href="#contact" className="btn-secondary">
             Contact Me
@@ -236,7 +226,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Scroll indicator */}
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="mt-16 flex justify-center w-full"
         >
@@ -256,7 +246,7 @@ export default function Hero() {
               />
             </svg>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

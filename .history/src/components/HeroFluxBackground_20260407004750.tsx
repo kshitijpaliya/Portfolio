@@ -47,23 +47,23 @@ export default function HeroFluxBackground() {
 
       ctx.clearRect(0, 0, width, height);
 
-      const t = time * 0.00042;
-      const lineCount = 12;
+      const t = time * 0.00032;
+      const lineCount = 16;
       const points = 140;
       const baseAmplitude = height * 0.05;
 
       for (let i = 0; i < lineCount; i++) {
         const progress = i / (lineCount - 1);
         const bandCenter = height * 0.58;
-        const bandRange = height * 0.24;
+        const bandRange = height * 0.32;
         const wobble = Math.sin(t * 0.8 + i * 1.7) * (height * 0.012);
-        const edgeLift = Math.pow(Math.abs(progress - 0.5) * 2, 1.1);
+        const edgeLift = Math.pow(Math.abs(progress - 0.5) * 2, 1.15);
         const baseY =
           bandCenter +
           (progress - 0.5) * bandRange +
           wobble -
           height * 0.06 +
-          edgeLift * height * 0.05;
+          edgeLift * height * 0.07;
         const fade = 0.4 + (1 - Math.abs(progress - 0.5) * 1.6) * 0.6;
         const amplitude = baseAmplitude * (0.3 + fade * 0.7);
         const phase = i * 0.85 + Math.sin(i * 0.9) * 1.2;
@@ -80,7 +80,7 @@ export default function HeroFluxBackground() {
           const wave1 = Math.sin(x * freq1 + t * speed + phase);
           const wave2 = Math.sin(x * freq2 + t * (speed * 1.35) + phase * 1.7);
           const slopeSign = i % 2 === 0 ? 1 : -1;
-          const slope = (x / width - 0.5) * height * 0.2 * slopeSign;
+          const slope = (x / width - 0.5) * height * 0.35 * slopeSign;
           const y =
             baseY +
             (wave1 * 0.7 + wave2 * 0.3) * amplitude * (0.35 + taper * 1.1);

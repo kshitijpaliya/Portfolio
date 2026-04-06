@@ -68,7 +68,7 @@ export default function Contact({ showDivider }: { showDivider?: boolean }) {
     },
     {
       label: "LinkedIn",
-      value: "linkedin.com/in/kshitij-paliya",
+      value: "linkedin.com/in/kshitijpaliya",
       href: "https://linkedin.com/in/kshitij-paliya",
       icon: (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

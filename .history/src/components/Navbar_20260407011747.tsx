@@ -120,6 +120,15 @@ export default function Navbar() {
                     href="https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
+                    // onClick={(e) => {
+                    //   e.preventDefault();
+                    //   window.open(
+                    //     "https://drive.google.com/file/d/1F6UVvkEszXkEBOEpnoIXKkP4eGFjG66U/view?usp=sharing",
+                    //     "_blank",
+                    //     "noopener,noreferrer",
+                    //   );
+                    //   setMobileOpen(false);
+                    // }}
                     className="btn-primary inline-flex items-center gap-2 text-center justify-center w-full"
                   >
                     <span>Resume</span>
