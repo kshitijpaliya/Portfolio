@@ -9,7 +9,7 @@ export default function About({ showDivider }: { showDivider?: boolean }) {
     <SectionWrapper id="about" showDivider={showDivider}>
       <SectionHeader label="About" title="Who is Kshitij??" subtitle="" />
 
-      <div className="glass-card p-6 md:p-8 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,29 +17,19 @@ export default function About({ showDivider }: { showDivider?: boolean }) {
           transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-6"
         >
-          <ul className="space-y-2 text-neutral-200 leading-relaxed list-disc pl-5 text-justify">
-            <li>
+          <ul className="space-y-2 text-neutral-200 leading-relaxed list-disc pl-5">
               Hi there, I am Kshitij Paliya, currently based in Gurugram,
-              Haryana.
-            </li>
-            <li>Currently a final year BTech IT student at MIT Manipal.</li>
-            <li>
+              Haryana. Currently a final year BTech IT student at MIT Manipal.
               Intern @ Bain & Company (BCN), where I am getting exposure to
               real-world problem solving in a structured environment.
-            </li>
-            <li>
+    
+
               My core interest lies in full-stack development and cloud, and
-              that is where most of my work has been focused.
-            </li>
-            <li>
-              Over time, I have built and worked on multiple projects and
+              that is where most of my work has been focused. Over time, I have built and worked on multiple projects and
               internships, learning more by doing than anything else.
-            </li>
-            <li>
               I usually work with technologies like Next.js, MERN Stack, AWS and
               other modern web tools depending on the use case.
-            </li>
-            <li>
+          
               Outside of tech, I enjoy travelling and exploring new places
               whenever I get the chance. History is one another thing that I
               find fascinating.

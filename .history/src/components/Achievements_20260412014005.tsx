@@ -11,7 +11,7 @@ const leadership = [
     period: "Manipal, Karnataka, India",
     bullets: [
       "Led and managed a team of 30+ members, coordinating scheduling and execution for 100+ large-scale fest events",
-      "Automated recruitment workflows using SQL and Excel, removing manual effort ",
+      "Automated recruitment workflows using SQL and Excel, reducing manual effort by over 40%",
       "Served as Point of Contact (POC) across stakeholders to ensure alignment and timely execution",
     ],
     icon: "🎯",

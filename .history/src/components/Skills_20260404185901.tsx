@@ -153,7 +153,7 @@ export default function Skills({ showDivider }: { showDivider?: boolean }) {
       <SectionHeader
         label="Skills"
         title="Tech Stack"
-        subtitle="The tools and technologies I have worked with have experience in."
+        subtitle="The tools and technologies I use to build production-grade systems."
       />
 
       <div

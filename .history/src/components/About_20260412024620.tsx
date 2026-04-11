@@ -9,7 +9,7 @@ export default function About({ showDivider }: { showDivider?: boolean }) {
     <SectionWrapper id="about" showDivider={showDivider}>
       <SectionHeader label="About" title="Who is Kshitij??" subtitle="" />
 
-      <div className="glass-card p-6 md:p-8 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ export default function About({ showDivider }: { showDivider?: boolean }) {
           transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-6"
         >
-          <ul className="space-y-2 text-neutral-200 leading-relaxed list-disc pl-5 text-justify">
+          <ul className="space-y-2 text-muted/15 leading-relaxed list-disc pl-5">
             <li>
               Hi there, I am Kshitij Paliya, currently based in Gurugram,
               Haryana.

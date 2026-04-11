@@ -11,7 +11,7 @@ const leadership = [
     period: "Manipal, Karnataka, India",
     bullets: [
       "Led and managed a team of 30+ members, coordinating scheduling and execution for 100+ large-scale fest events",
-      "Automated recruitment workflows using SQL and Excel, removing manual effort ",
+      "Automated recruitment workflows using SQL and Excel, reducing manual effort by over 40%",
       "Served as Point of Contact (POC) across stakeholders to ensure alignment and timely execution",
     ],
     icon: "🎯",
@@ -22,7 +22,7 @@ const leadership = [
     period: "Nov 2022 – Sept 2024",
     bullets: [
       "Orchestrated the Manipal Entrepreneurship Summit 2024 and Innovation Mela, attracting 15,000+ attendees and 120+ startups, research, and student projects",
-      "Worked on MIT SkillHub, a platform connecting students with freelance and internship opportunities",
+      "Built MIT SkillHub, a platform connecting students with freelance and internship opportunities",
       "Designed an ideation pipeline to streamline early-stage startup discovery and engagement with the incubation center",
     ],
     icon: "🚀",
@@ -38,7 +38,8 @@ const achievements = [
   },
   {
     title: "Top 30 — M# Hackathon",
-    subtitle: "Ranked among Top 30 finalists out of 350+ teams at MIT Manipal",
+    subtitle:
+      "Ranked among Top 30 finalists out of 350+ teams at MIT Manipal",
     icon: "🥇",
   },
   {
@@ -103,9 +104,7 @@ export default function Achievements({
                       {item.org}
                     </p>
                     {"period" in item && item.period && (
-                      <p className="text-[11px] text-muted mb-3">
-                        {item.period}
-                      </p>
+                      <p className="text-[11px] text-muted mb-3">{item.period}</p>
                     )}
                     <ul className="space-y-2">
                       {item.bullets.map((b, j) => (

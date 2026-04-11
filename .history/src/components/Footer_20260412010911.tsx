@@ -11,7 +11,7 @@ export default function Footer() {
               <span className="gradient-text">Kshitij Paliya</span>
             </p>
             <p className="text-xs text-muted mt-1">
-              Software Engineer · Full Stack · Cloud
+              Software Engineer · Full Stack · Cloud · Real-Time Systems
             </p>
           </div>
 
@@ -72,7 +72,8 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-xs text-muted/60">
-            &copy; {new Date().getFullYear()} Kshitij Paliya. Built with ❤️
+            &copy; {new Date().getFullYear()} Kshitij Paliya. Built with
+            Next.js.
           </p>
         </div>
       </div>

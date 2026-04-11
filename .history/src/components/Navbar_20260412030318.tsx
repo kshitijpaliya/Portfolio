@@ -39,9 +39,9 @@ export default function Navbar() {
             className="text-lg font-semibold tracking-tight text-white hover:text-indigo-400 transition-colors"
           >
             <span className="gradient-text">KP</span>
-            <span className="text-zinc-500 font-light ml-1 text-sm hidden sm:inline">
-              /
-            </span>
+            {/* <span className="text-zinc-500 font-light ml-1 text-sm hidden sm:inline">
+              / engineer
+            </span> */}
           </a>
 
           {/* Desktop Nav */}

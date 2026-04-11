@@ -5,11 +5,14 @@ import Image from "next/image";
 import SectionWrapper, { SectionHeader } from "./SectionWrapper";
 
 export default function About({ showDivider }: { showDivider?: boolean }) {
+  const keywordUnderline =
+    "underline decoration-2 underline-offset-2 decoration-orange-400/90";
+
   return (
     <SectionWrapper id="about" showDivider={showDivider}>
       <SectionHeader label="About" title="Who is Kshitij??" subtitle="" />
 
-      <div className="glass-card p-6 md:p-8 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,32 +20,52 @@ export default function About({ showDivider }: { showDivider?: boolean }) {
           transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-6"
         >
-          <ul className="space-y-2 text-neutral-200 leading-relaxed list-disc pl-5 text-justify">
+          <ul className="space-y-2 text-neutral-300 leading-relaxed list-disc pl-5 marker:text-neutral-400">
             <li>
-              Hi there, I am Kshitij Paliya, currently based in Gurugram,
-              Haryana.
+              Hi there, I am{" "}
+              <span className={keywordUnderline}>Kshitij Paliya</span>,
+              currently based in{" "}
+              <span className={keywordUnderline}>Gurugram, Haryana</span>.
             </li>
-            <li>Currently a final year BTech IT student at MIT Manipal.</li>
-            <li>
-              Intern @ Bain & Company (BCN), where I am getting exposure to
-              real-world problem solving in a structured environment.
+            <li className="text-justify">
+              Currently a final year{" "}
+              <span className={keywordUnderline}>BTech IT student</span> at{" "}
+              <span className={keywordUnderline}>MIT Manipal</span>.
             </li>
-            <li>
-              My core interest lies in full-stack development and cloud, and
-              that is where most of my work has been focused.
+            <li className="text-justify">
+              Intern @{" "}
+              <span className={keywordUnderline}>Bain & Company (BCN)</span>,
+              where I am getting exposure to
+              <span className={keywordUnderline}>
+                {" "}
+                real-world problem solving
+              </span>{" "}
+              in a structured environment.
             </li>
-            <li>
-              Over time, I have built and worked on multiple projects and
-              internships, learning more by doing than anything else.
+            <li className="text-justify">
+              My core interest lies in{" "}
+              <span className={keywordUnderline}>full-stack development</span>{" "}
+              and <span className={keywordUnderline}>cloud</span>, and that is
+              where most of my work has been focused.
             </li>
-            <li>
-              I usually work with technologies like Next.js, MERN Stack, AWS and
-              other modern web tools depending on the use case.
+            <li className="text-justify">
+              Over time, I have built and worked on multiple{" "}
+              <span className={keywordUnderline}>projects</span> and
+              <span className={keywordUnderline}> internships</span>, learning
+              more by doing than anything else.
             </li>
-            <li>
+            <li className="text-justify">
+              I usually work with technologies like{" "}
+              <span className={keywordUnderline}>Next.js</span>,{" "}
+              <span className={keywordUnderline}>MERN Stack</span>,{" "}
+              <span className={keywordUnderline}>AWS</span> and other modern web
+              tools depending on the use case.
+            </li>
+            <li className="text-justify">
               Outside of tech, I enjoy travelling and exploring new places
-              whenever I get the chance. History is one another thing that I
-              find fascinating.
+              whenever I get the chance.{" "}
+              <span className={keywordUnderline}>History</span> is one another
+              thing that I find fascinating.
             </li>
           </ul>
 

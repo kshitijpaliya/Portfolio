@@ -11,7 +11,7 @@ export default function Footer() {
               <span className="gradient-text">Kshitij Paliya</span>
             </p>
             <p className="text-xs text-muted mt-1">
-              Software Engineer · Full Stack · Cloud
+              Software Engineer · Full Stack · Cloud · Real-Time Systems
             </p>
           </div>
 

@@ -73,7 +73,7 @@ export default function Experience({ showDivider }: { showDivider?: boolean }) {
       <SectionHeader
         label="Experience"
         title="Where I've Built"
-        subtitle="Hands-on experience across analytics, full-stack development, and cloud."
+        // subtitle="Production systems, startup velocity, and engineering depth."
       />
 
       <div ref={ref} className="relative">

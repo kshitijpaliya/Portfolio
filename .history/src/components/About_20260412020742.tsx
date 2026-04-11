@@ -7,9 +7,13 @@ import SectionWrapper, { SectionHeader } from "./SectionWrapper";
 export default function About({ showDivider }: { showDivider?: boolean }) {
   return (
     <SectionWrapper id="about" showDivider={showDivider}>
-      <SectionHeader label="About" title="Who is Kshitij??" subtitle="" />
+      <SectionHeader
+        label="About"
+        title="Who is Kshitij??"
+        subtitle="Building systems that scale, perform, and solve real problems."
+      />
 
-      <div className="glass-card p-6 md:p-8 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,34 +21,13 @@ export default function About({ showDivider }: { showDivider?: boolean }) {
           transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-6"
         >
-          <ul className="space-y-2 text-neutral-200 leading-relaxed list-disc pl-5 text-justify">
-            <li>
-              Hi there, I am Kshitij Paliya, currently based in Gurugram,
-              Haryana.
-            </li>
-            <li>Currently a final year BTech IT student at MIT Manipal.</li>
-            <li>
-              Intern @ Bain & Company (BCN), where I am getting exposure to
-              real-world problem solving in a structured environment.
-            </li>
-            <li>
-              My core interest lies in full-stack development and cloud, and
-              that is where most of my work has been focused.
-            </li>
-            <li>
-              Over time, I have built and worked on multiple projects and
-              internships, learning more by doing than anything else.
-            </li>
-            <li>
-              I usually work with technologies like Next.js, MERN Stack, AWS and
-              other modern web tools depending on the use case.
-            </li>
-            <li>
-              Outside of tech, I enjoy travelling and exploring new places
-              whenever I get the chance. History is one another thing that I
-              find fascinating.
-            </li>
-          </ul>
+          <p className="text-muted leading-relaxed">
+            I am a full-stack engineer focused on building practical products
+            that solve real problems. From analytics dashboards to cloud-backed
+            web platforms, I work across frontend, backend, and infrastructure
+            to ship reliable systems with strong performance and clean
+            architecture.
+          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[

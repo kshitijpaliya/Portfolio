@@ -9,7 +9,7 @@ export default function About({ showDivider }: { showDivider?: boolean }) {
     <SectionWrapper id="about" showDivider={showDivider}>
       <SectionHeader label="About" title="Who is Kshitij??" subtitle="" />
 
-      <div className="glass-card p-6 md:p-8 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div className=" glass-card grid md:grid-cols-2 gap-8 md:gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
