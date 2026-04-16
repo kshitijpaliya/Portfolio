@@ -14,15 +14,16 @@ const projects = [
       "WebSocket-based real-time sync via Pusher — instant updates across devices",
       "Secure file uploads with Cloudflare R2 presigned URLs",
       "AES-256 encryption for data at rest, CAPTCHA + rate limiting for abuse prevention",
+      "PostgreSQL with optimized queries for sub-100ms response times",
     ],
     tech: ["Next.js", "Pusher", "Cloudflare R2", "PostgreSQL", "AES-256"],
+    emphasis: "System Design · Scalability · Security",
     color: "from-indigo-500 to-violet-600",
     featured: true,
     links: {
       github: "https://github.com/kshitijpaliya/PaperClip",
       live: "https://paper-clip-project.vercel.app/",
     },
-    image: "/paperclip.png",
   },
   {
     title: "HemoCare",
@@ -35,6 +36,7 @@ const projects = [
       "Intelligent scheduling algorithm for optimal resource utilization",
     ],
     tech: ["React Native", "Node.js", "MongoDB", "WebSockets"],
+    emphasis: "Healthcare · Real-Time · Impact",
     color: "from-emerald-500 to-teal-600",
     featured: false,
     links: {
@@ -53,32 +55,32 @@ const projects = [
       "Firebase backend for user authentication and trip storage",
     ],
     tech: ["React", "Firebase", "Gemini API", "Google Places API"],
+    emphasis: "AI Integration · UX Design",
     color: "from-amber-500 to-orange-600",
     featured: false,
     links: {
       github: "https://github.com/kshitijpaliya/travelify",
       live: "https://travelify-travel.vercel.app/",
     },
-    image: "/travelify.png",
   },
   {
     title: "Creator Dashboard Platform",
-    tagline: "Brand-Creator Collaboration.",
+    tagline: "AI-powered brand-creator collaboration.",
     description:
-      "Enterprise dashboard for managing creator profiles and campaigns, ability to view creator profiles, create new campaigns with AI-powered search and real-time filters. ",
+      "Enterprise dashboard for managing creator profiles, campaigns, and analytics with AI-powered search and video streaming infrastructure.",
     features: [
       "AI-based search and real-time filtering across 200+ creator profiles",
       "Campaign workflow management with status tracking",
       "Video streaming infrastructure for content review",
     ],
     tech: ["Next.js", "Node.js", "AWS", "PostgreSQL", "AI Search"],
+    emphasis: "Enterprise Scale · AI Integration",
     color: "from-blue-500 to-cyan-600",
     featured: true,
     links: {
       github: "#",
       live: "https://klyk.thejunecollective.com/",
     },
-    image: "/klyk.png",
   },
   {
     title: "Crop Recommendation System",
@@ -91,6 +93,7 @@ const projects = [
       "Evaluation suite: ROC curves, confusion matrices, cross-validation",
     ],
     tech: ["Python", "XGBoost", "Scikit-learn", "Pandas", "Matplotlib"],
+    emphasis: "Machine Learning · Data Science",
     color: "from-green-500 to-lime-600",
     featured: false,
     links: {
@@ -130,27 +133,30 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                 }}
                 className="glass-card overflow-hidden group h-full"
               >
-                {project.links.live !== "#" && project.image && (
+                {/* Gradient header */}
+                <div className={`h-2 bg-gradient-to-r ${project.color}`} />
+
+                {project.links.live !== "#" && (
                   <a
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block overflow-hidden border-b border-white/10"
-                    aria-label={`${project.title} live preview`}
+                    className="hidden lg:block absolute right-4 top-12 w-52 overflow-hidden rounded-xl border border-white/15 bg-black/40 opacity-0 rotate-3 translate-y-3 scale-95 group-hover:opacity-100 group-hover:rotate-0 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 z-20"
+                    aria-label={`${project.title} hover preview`}
                   >
                     <img
-                      src={project.image}
+                      src={`https://image.thum.io/get/width/900/noanimate/${project.links.live}`}
                       alt={`${project.title} preview`}
-                      className="h-56 md:h-72 w-full object-cover"
+                      className="h-28 w-full object-cover"
                       loading="lazy"
                     />
+                    <div className="px-3 py-2 text-[11px] text-accent-light">
+                      Open live preview
+                    </div>
                   </a>
                 )}
 
-                {/* Gradient header */}
-                <div className={`h-2 bg-gradient-to-r ${project.color}`} />
-
-                <div className="p-4 md:p-5 flex flex-col">
+                <div className="p-6 md:p-8 h-full flex flex-col">
                   {/* Title Row */}
                   <div className="flex items-start justify-between mb-2">
                     <div>
@@ -211,7 +217,7 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                     {project.tagline}
                   </p>
 
-                  <p className="text-sm text-muted leading-relaxed mb-2">
+                  <p className="text-sm text-muted leading-relaxed mb-5">
                     {project.description}
                   </p>
 
@@ -241,6 +247,34 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Emphasis */}
+                  <p className="text-xs font-mono text-accent/70 mb-4 mt-auto">
+                    {project.emphasis}
+                  </p>
+
+                  <div className="mb-4 flex items-center gap-3 text-xs">
+                    {project.links.live !== "#" && (
+                      <a
+                        href={project.links.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent-light hover:text-accent transition-colors"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                    {project.links.github !== "#" && (
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted hover:text-foreground transition-colors"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
 
                   {/* Tech stack */}
                   <div className="flex flex-wrap gap-2">
@@ -359,6 +393,10 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                     </span>
                   ))}
                 </div>
+
+                <p className="text-[10px] font-mono text-accent/50">
+                  {project.emphasis}
+                </p>
               </motion.div>
             ))}
         </div>

@@ -78,7 +78,7 @@ export default function Experience({ showDivider }: { showDivider?: boolean }) {
 
       <div ref={ref} className="relative">
         {/* Timeline line */}
-        <div className="hidden lg:block absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent/10 to-transparent" />
+        <div className="hidden md:block absolute left-5 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent/10 to-transparent" />
 
         <div className="space-y-10 md:space-y-12">
           {experiences.map((exp, i) => (
@@ -91,11 +91,11 @@ export default function Experience({ showDivider }: { showDivider?: boolean }) {
                 delay: i * 0.15,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative pl-0 lg:pl-16"
+              className="relative pl-14 md:pl-16"
             >
               {/* Timeline dot */}
               <div
-                className={`hidden lg:block absolute left-4 top-1.5 w-4 h-4 rounded-full border-2 ${
+                className={`absolute left-3 md:left-4 top-1.5 w-4 h-4 rounded-full border-2 ${
                   exp.current
                     ? "border-accent bg-accent shadow-[0_0_12px_rgba(99,102,241,0.5)]"
                     : "border-accent/40 bg-background"

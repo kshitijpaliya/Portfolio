@@ -14,6 +14,7 @@ const projects = [
       "WebSocket-based real-time sync via Pusher — instant updates across devices",
       "Secure file uploads with Cloudflare R2 presigned URLs",
       "AES-256 encryption for data at rest, CAPTCHA + rate limiting for abuse prevention",
+      "PostgreSQL with optimized queries for sub-100ms response times",
     ],
     tech: ["Next.js", "Pusher", "Cloudflare R2", "PostgreSQL", "AES-256"],
     color: "from-indigo-500 to-violet-600",
@@ -359,6 +360,10 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                     </span>
                   ))}
                 </div>
+
+                <p className="text-[10px] font-mono text-accent/50">
+                  {project.emphasis}
+                </p>
               </motion.div>
             ))}
         </div>

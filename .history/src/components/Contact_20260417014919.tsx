@@ -16,10 +16,12 @@ export default function Contact({ showDivider }: { showDivider?: boolean }) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorMessage("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -31,7 +33,8 @@ export default function Contact({ showDivider }: { showDivider?: boolean }) {
       });
 
       if (!res.ok) {
-        throw new Error("Failed to submit form");
+        const data = (await res.json()) as { error?: string };
+        throw new Error(data.error || "Failed to submit form");
       }
 
       setStatus("sent");
@@ -39,7 +42,12 @@ export default function Contact({ showDivider }: { showDivider?: boolean }) {
         setFormData({ name: "", email: "", message: "" });
         setStatus("idle");
       }, 3000);
-    } catch {
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again.";
+      setErrorMessage(message);
       setStatus("error");
     }
   };
@@ -216,6 +224,10 @@ export default function Contact({ showDivider }: { showDivider?: boolean }) {
               {status === "error" && "Try Again"}
             </span>
           </button>
+
+          {status === "error" && errorMessage && (
+            <p className="text-xs text-red-300">{errorMessage}</p>
+          )}
         </motion.form>
       </div>
     </SectionWrapper>

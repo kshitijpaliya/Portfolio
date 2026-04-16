@@ -14,8 +14,10 @@ const projects = [
       "WebSocket-based real-time sync via Pusher — instant updates across devices",
       "Secure file uploads with Cloudflare R2 presigned URLs",
       "AES-256 encryption for data at rest, CAPTCHA + rate limiting for abuse prevention",
+      "PostgreSQL with optimized queries for sub-100ms response times",
     ],
     tech: ["Next.js", "Pusher", "Cloudflare R2", "PostgreSQL", "AES-256"],
+    emphasis: "System Design · Scalability · Security",
     color: "from-indigo-500 to-violet-600",
     featured: true,
     links: {
@@ -35,6 +37,7 @@ const projects = [
       "Intelligent scheduling algorithm for optimal resource utilization",
     ],
     tech: ["React Native", "Node.js", "MongoDB", "WebSockets"],
+    emphasis: "Healthcare · Real-Time · Impact",
     color: "from-emerald-500 to-teal-600",
     featured: false,
     links: {
@@ -53,6 +56,7 @@ const projects = [
       "Firebase backend for user authentication and trip storage",
     ],
     tech: ["React", "Firebase", "Gemini API", "Google Places API"],
+    emphasis: "AI Integration · UX Design",
     color: "from-amber-500 to-orange-600",
     featured: false,
     links: {
@@ -63,15 +67,16 @@ const projects = [
   },
   {
     title: "Creator Dashboard Platform",
-    tagline: "Brand-Creator Collaboration.",
+    tagline: "AI-powered brand-creator collaboration.",
     description:
-      "Enterprise dashboard for managing creator profiles and campaigns, ability to view creator profiles, create new campaigns with AI-powered search and real-time filters. ",
+      "Enterprise dashboard for managing creator profiles, campaigns, and analytics with AI-powered search and video streaming infrastructure.",
     features: [
       "AI-based search and real-time filtering across 200+ creator profiles",
       "Campaign workflow management with status tracking",
       "Video streaming infrastructure for content review",
     ],
     tech: ["Next.js", "Node.js", "AWS", "PostgreSQL", "AI Search"],
+    emphasis: "Enterprise Scale · AI Integration",
     color: "from-blue-500 to-cyan-600",
     featured: true,
     links: {
@@ -91,6 +96,7 @@ const projects = [
       "Evaluation suite: ROC curves, confusion matrices, cross-validation",
     ],
     tech: ["Python", "XGBoost", "Scikit-learn", "Pandas", "Matplotlib"],
+    emphasis: "Machine Learning · Data Science",
     color: "from-green-500 to-lime-600",
     featured: false,
     links: {
@@ -128,130 +134,163 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                   delay: i * 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="glass-card overflow-hidden group h-full"
+                className="group h-full flex flex-col gap-3"
               >
                 {project.links.live !== "#" && project.image && (
                   <a
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block overflow-hidden border-b border-white/10"
+                    className="block overflow-hidden rounded-2xl border border-white/10 glass-card"
                     aria-label={`${project.title} live preview`}
                   >
                     <img
                       src={project.image}
                       alt={`${project.title} preview`}
-                      className="h-56 md:h-72 w-full object-cover"
+                      className="h-48 md:h-56 w-full object-cover"
                       loading="lazy"
                     />
+                    <div className="px-3 py-2 text-[11px] text-accent-light bg-black/20">
+                      Open live preview
+                    </div>
                   </a>
                 )}
 
-                {/* Gradient header */}
-                <div className={`h-2 bg-gradient-to-r ${project.color}`} />
+                <div className="glass-card overflow-hidden h-full">
+                  {/* Gradient header */}
+                  <div className={`h-2 bg-gradient-to-r ${project.color}`} />
 
-                <div className="p-4 md:p-5 flex flex-col">
-                  {/* Title Row */}
-                  <div className="flex items-start justify-between mb-2">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-accent">
-                          Featured
-                        </span>
+                  <div className="p-6 md:p-8 h-full flex flex-col">
+                    {/* Title Row */}
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+                            Featured
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground group-hover:text-accent-light transition-colors">
+                          {project.title}
+                        </h3>
                       </div>
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-accent-light transition-colors">
-                        {project.title}
-                      </h3>
-                    </div>
-                    <div className="flex gap-2">
-                      {project.links.live !== "#" && (
+                      <div className="flex gap-2">
+                        {project.links.live !== "#" && (
+                          <a
+                            href={project.links.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-white/5 transition-all"
+                            aria-label={`${project.title} Live`}
+                          >
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M14 3h7v7" />
+                              <path d="M10 14L21 3" />
+                              <path d="M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1h6" />
+                            </svg>
+                          </a>
+                        )}
                         <a
-                          href={project.links.live}
+                          href={project.links.github}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-white/5 transition-all"
-                          aria-label={`${project.title} Live`}
+                          aria-label={`${project.title} GitHub`}
                         >
                           <svg
                             width="18"
                             height="18"
                             viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
+                            fill="currentColor"
                           >
-                            <path d="M14 3h7v7" />
-                            <path d="M10 14L21 3" />
-                            <path d="M21 14v6a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1h6" />
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                           </svg>
                         </a>
-                      )}
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-white/5 transition-all"
-                        aria-label={`${project.title} GitHub`}
-                      >
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                        </svg>
-                      </a>
+                      </div>
                     </div>
-                  </div>
 
-                  <p className="text-sm text-accent-light/80 font-medium mb-3">
-                    {project.tagline}
-                  </p>
+                    <p className="text-sm text-accent-light/80 font-medium mb-3">
+                      {project.tagline}
+                    </p>
 
-                  <p className="text-sm text-muted leading-relaxed mb-2">
-                    {project.description}
-                  </p>
+                    <p className="text-sm text-muted leading-relaxed mb-5">
+                      {project.description}
+                    </p>
 
-                  {/* Features */}
-                  <ul className="space-y-2 mb-6">
-                    {project.features.map((f, j) => (
-                      <li
-                        key={j}
-                        className="flex gap-2 text-xs text-muted leading-relaxed"
-                      >
-                        <svg
-                          className="mt-0.5 shrink-0 text-accent/50"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 16 16"
-                          fill="none"
+                    {/* Features */}
+                    <ul className="space-y-2 mb-6">
+                      {project.features.map((f, j) => (
+                        <li
+                          key={j}
+                          className="flex gap-2 text-xs text-muted leading-relaxed"
                         >
-                          <path
-                            d="M13.25 4.75L6 12 2.75 8.75"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
+                          <svg
+                            className="mt-0.5 shrink-0 text-accent/50"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                          >
+                            <path
+                              d="M13.25 4.75L6 12 2.75 8.75"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  {/* Tech stack */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="skill-badge !text-xs !py-0.5 !px-2"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                    {/* Emphasis */}
+                    <p className="text-xs font-mono text-accent/70 mb-4 mt-auto">
+                      {project.emphasis}
+                    </p>
+
+                    <div className="mb-4 flex items-center gap-3 text-xs">
+                      {project.links.live !== "#" && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-accent-light hover:text-accent transition-colors"
+                        >
+                          Live Demo
+                        </a>
+                      )}
+                      {project.links.github !== "#" && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted hover:text-foreground transition-colors"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                    </div>
+
+                    {/* Tech stack */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="skill-badge !text-xs !py-0.5 !px-2"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -359,6 +398,10 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                     </span>
                   ))}
                 </div>
+
+                <p className="text-[10px] font-mono text-accent/50">
+                  {project.emphasis}
+                </p>
               </motion.div>
             ))}
         </div>

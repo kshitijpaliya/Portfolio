@@ -34,8 +34,8 @@ export default function ParticleBackground() {
         return {
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * (isLarge ? 0.34 : 0.72),
-          vy: (Math.random() - 0.5) * (isLarge ? 0.34 : 0.72),
+          vx: (Math.random() - 0.5) * (isLarge ? 0.2 : 0.45),
+          vy: (Math.random() - 0.5) * (isLarge ? 0.2 : 0.45),
           radius: isLarge ? Math.random() * 3 + 2 : Math.random() * 1.8 + 0.6,
           opacity: isLarge
             ? Math.random() * 0.35 + 0.15
@@ -67,7 +67,6 @@ export default function ParticleBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const particles = particlesRef.current;
       const mouse = mouseRef.current;
-      const t = performance.now() * 0.001;
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -79,21 +78,13 @@ export default function ParticleBackground() {
 
         if (dist > 0 && dist < 200) {
           const force = (200 - dist) / 200;
-          p.vx += (dx / dist) * force * 0.016;
-          p.vy += (dy / dist) * force * 0.016;
+          p.vx += (dx / dist) * force * 0.01;
+          p.vy += (dy / dist) * force * 0.01;
         }
 
-        // Autonomous wandering so particles keep moving even without pointer input.
-        const wobbleX = Math.sin(t * 0.78 + i * 1.37) * 0.0026;
-        const wobbleY = Math.cos(t * 0.95 + i * 1.91) * 0.0026;
-        const randomJitterX = (Math.random() - 0.5) * 0.0012;
-        const randomJitterY = (Math.random() - 0.5) * 0.0012;
-        p.vx += wobbleX + randomJitterX;
-        p.vy += wobbleY + randomJitterY;
-
         // Damping
-        p.vx *= 0.989;
-        p.vy *= 0.989;
+        p.vx *= 0.99;
+        p.vy *= 0.99;
 
         p.x += p.vx;
         p.y += p.vy;

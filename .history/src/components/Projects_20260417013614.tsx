@@ -359,6 +359,10 @@ export default function Projects({ showDivider }: { showDivider?: boolean }) {
                     </span>
                   ))}
                 </div>
+
+                <p className="text-[10px] font-mono text-accent/50">
+                  {project.emphasis}
+                </p>
               </motion.div>
             ))}
         </div>
