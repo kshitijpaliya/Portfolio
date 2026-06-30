@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kshitijpaliya.fun"), // ✅ FIX
+  metadataBase: new URL("https://kshitijpaliya.space"), // ✅ FIX
 
   title: "Kshitij Paliya",
   description:

@@ -1,10 +1,20 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-interface ContactPayload {
+
+type ContactPayload = {
   name?: string;
   email?: string;
   message?: string;
+};
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 export async function POST(request: Request) {
@@ -42,6 +52,10 @@ export async function POST(request: Request) {
       auth: { user, pass },
     });
 
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeMessage = escapeHtml(message);
+
     await transporter.sendMail({
       from: `Portfolio Contact <${from}>`,
       to,
@@ -50,10 +64,10 @@ export async function POST(request: Request) {
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: `
         <h2>New Portfolio Contact</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Name:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> ${safeEmail}</p>
         <p><strong>Message:</strong></p>
-        <p style="white-space: pre-wrap;">${message}</p>
+        <p style="white-space: pre-wrap;">${safeMessage}</p>
       `,
     });
 
